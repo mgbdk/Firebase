@@ -1,0 +1,117 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Giriş Yap</title>
+    <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+    <style type="text/css">
+        body{
+            background-color:#E7E7E7;
+        }
+        .main{
+            width: 400px;
+            height: 350px;
+            background-color: #0F3057;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 100px;
+            border-radius: 5px;
+        }
+        h1{
+            font-family: sans-serif;
+            color: #c3d1e0;
+            font-size: 16px;
+            padding-top: 30px;
+            margin-left: 50px;
+        }
+        hr{
+            background-color: #c3d1e0;
+            width: 300px;
+        }
+        .form{
+            width: 300px;
+            padding-top: 30px;
+        }
+        .text{
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top:20px;
+        }
+        .txt{
+            width: 235px;
+            height: 33px;
+            background-color: #ffffff;
+            color: #0F3057;   
+            margin-left: 80px;
+        }
+        .buttons{
+            width: 400px;
+            margin-top:30px; 
+            margin-left: 85px;
+        }
+       .btn{
+            color: #0F3057;
+            background-color: #FFFFFF;
+            font-family: sans-serif;
+            font-size: 15px;
+            width: 100px;
+            height: 35px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            margin-left: -5px;
+        }
+        #btnSignUp{
+            position: relative;
+            left: -99px;
+        }
+        #uyeol{
+            color: #c3d1e0;
+            font-family: sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 83px;
+        }
+        #uyeol:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        function funcLoad(){
+            $("#txtName").hide();
+            $("#btnSignUp").hide();
+        }
+        $("document").ready(function(){
+            $("#uyeol").click(function(){
+                $(this).hide();
+                $("#txtName").show();
+                $("#btnSignUp").show();
+                $("btnLogin").hide();
+                $("#mainBaslik").html("Üye Ol");
+                $(".main").css("height","370px");
+            });
+        });
+    </script>
+</head>
+<body onload="funcLoad()">
+<div class="main">
+    <h1 id="mainBaslik">Giriş Yap</h1>
+    <hr>
+    <div class="form">
+        <div class="text"><input id="txtName" class="txt" type="username" placeholder="Kullanıcı Adı"></div>
+        <div class="text"><input id="txtEmail" class="txt" type="email" placeholder="Email"></div>
+        <div class="text"><input id="txtPassword" class="txt" type="password" placeholder="Şifre"></div>
+        <div class="buttons">
+            <button id="btnLogin" class="btn">Giriş Yap</button>
+            <button id="btnSignUp" class="btn">Kayıt Ol</button>
+        </div>
+        <div class="text"><label id="uyeol">Üye değil misin?</label></div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+body{
+    background-color:#E7E7E7;
+}
+.main{
+    width:980px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+.topmenu{
+    width: 980px;
+    height: 35px;
+    background-color: #0F3057;
+    border-bottom: 1px solid #E7E7DE;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.baslik{
+    width: 200px;
+    float: left;
+    padding: 6px 6px 6px 20px;
+}
+.baslik h1{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #E7E7DE;
+}
+.divLogout{
+    width: 100px;
+    float: right;
+    padding: 7px 0px 6px 6px;
+}
+.btnLogout{
+    background-color: transparent;
+    border:none;
+    color: #E7E7DE;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+.profile{
+    width: 280px;
+    height: 500px;
+    float: left;
+    background-color:#0F3057;
+    border-bottom-left-radius: 5px;
+}
+.divUser{
+    width: 265px;
+    padding-top: 20px;
+    padding-left: 15px;
+    height: 50px;
+    border-bottom: 1px solid #E7E7DE;
+}
+.userIcon{
+    color: #f8f9fb;
+    float: left;
+    padding-right: 5px;
+}
+.username{
+    color: #f8f9fb;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+.divMesaj{
+    width: 245px;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    background-color: #CDCBA6;
+}
+.mesajLink{
+    color: #0f3057;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.divKullanicilar{
+    width: 245px;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    background-color: #CDCBA6;
+    margin-top: 2px;
+    height: 355px;
+    overflow-y: scroll;
+}
+.divKullanicilar h1{
+    color: #0f3057;
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.divKullanicilar .userListe{
+    color: #0f3057;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+.message{
+    background-color:#f8f9fb;
+    background-color: #f8f9fb;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    float: left;
+    width: 500px;
+    height: 400px;
+    border-bottom-right-radius: 5px;
+}
+.divForm{
+    width: 500px;
+    margin-bottom: 20px;
+}
+.lblKonu, .lblMessage{
+    color: #0f3057;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+.lblMessage{
+    position: relative;
+    top: -105px;
+}
+.textKonu{
+    width: 250px;
+    font-size: 16px;
+    height: 35px;
+}
+.textareaMesaj{
+    width: 250px;
+    height: 130px;
+    margin: -4px;
+}
+.btnGonder{
+    border: 1px solid #0f3057;
+    border-radius: 5px;
+    width: 100px;
+    height: 36px;
+    background-color: #0f3057;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 220px;
+    margin-top: 30px;
+}
+/*
+.formDiv label{
+    width: 30px;
+    color: #2c2e3b;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.text{
+    width: 300px;
+    height: 30px;
+    border:1px solid #b5b6bb;
+    font-size: 15px;
+    color: #2c2e3b;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.textarea{
+    width: 295px;
+    height: 150px;
+    border:1px solid #b5b6bb;
+    font-size: 15px;
+    color: #2c2e3b;
+    margin: -3px;
+    font-family: sans-serif;
+}
+.btnGonder{
+    width: 120px;
+    height: 35px;
+    background-color: #2c2e3b;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+    margin-left: 64px;
+}
+.lblMesaj{
+    position: relative;
+    top: -130px;
+}
+.username{
+    height: 50px;
+    padding-left: 30px;
+    padding-top: 25px;
+}
+.username h2{
+    color: #FFFFFF;
+    font-family: sans-serif;
+    font-size: 18px;
+    float: left;
+    margin-top: 0px;
+    margin-right: 20px;
+}
+.profileIcon{
+    color: #FFFFFF;
+}
+*/

@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Çalışma Platformu</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+</head>
+<body>
+<div class="main">
+  <div class="topmenu">
+    <div class="baslik"><h1>Çalışma Platformu</h1></div>
+    <div class="divLogout"><button id="btnLogout" class="btnLogout">Çıkış Yap</button></div>
+  </div>
+  <div class="profile">
+    <div class="divUser"><i class="fa fa-user-circle-o fa-2x userIcon" aria-hidden="true"></i><h1 id="username" class="username"></h1></div>
+    <div class="divMesaj"><a href="mesajlar.html" class="mesajLink">Mesajlar</a></div>
+    <div class="divKullanicilar">
+        <h1>Kullanıcılar</h1>
+        <ul id="users" class="userListe"></ul>
+    </div>
+  </div>
+  <div class="message">
+        <div class="divForm">
+          <label class="lblKonu">Konu</label>
+          <input type="text" class="textKonu" id="konu">
+        </div>
+        <div class="divForm">
+          <label class="lblMessage">Mesaj</label>
+          <textarea class="textareaMesaj" id="mesaj"></textarea>
+        </div>
+        <div class="divForm"><button class="btnGonder" id="submit">Gönder</button></div>
+  </div>
+</div>
+<script>
+  var config = {
+    apiKey: "AIzaSyDM_Dkja5mBvWj17NFREmlEuAiTKUdNrWc",
+    authDomain: "workingplatform-92bf8.firebaseapp.com",
+    databaseURL: "https://workingplatform-92bf8.firebaseio.com",
+    projectId: "workingplatform-92bf8",
+    storageBucket: "",
+    messagingSenderId: "89837470257"
+  };
+  firebase.initializeApp(config);
+  var mesajRef = firebase.database().ref();
+    const btnLogout = document.getElementById('btnLogout');
+    const submit = document.getElementById('submit');
+    const username = document.getElementById('username');
+    const konu = document.getElementById('konu');
+    const mesaj = document.getElementById('mesaj');
+    var kullanicilar = document.getElementById('users');
+    var ref =firebase.database().ref();
+    var totalMessage = 0;
+    var i;
+    var datetime = new Date().toLocaleString();
+    
+    mesajRef.child("users").on("value", function(snapshot) {
+          totalMessage = snapshot.numChildren(); 
+          var msjRef = mesajRef.child("users");
+          for (i = totalMessage; i > 0; i--) { 
+              var user = msjRef.child(i).child("Username");
+              user.on('value', snap => kullanicilar.innerHTML += '<li>'+ snap.val() +'</li>');
+          }
+    });
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if(!firebaseUser) {
+          window.location = "giris.html";
+      }
+      username.innerText = firebaseUser.email;
+    });
+
+    btnLogout.addEventListener('click', e => {
+      firebase.auth().signOut();
+    });
+
+    submit.addEventListener('click', e => {
+      
+    ref.child("Mesajlar").on("value", function(snapshot) {
+        totalMessage = snapshot.numChildren() + 1; 
+      });
+      mesajRef.child("Mesajlar").child(totalMessage).child("Username").set(username.innerText);
+      mesajRef.child("Mesajlar").child(totalMessage).child("Tarih").set(datetime);
+      mesajRef.child("Mesajlar").child(totalMessage).child("Konu").set(konu.value);
+      mesajRef.child("Mesajlar").child(totalMessage).child("İçerik").set(mesaj.value);
+      alert("Mesajınız Gönderildi");
+
+    });
+</script>
+</body>
